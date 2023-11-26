@@ -1,0 +1,20 @@
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+	<nav class="navbar navbar-default">
+
+	<div id="menu">
+    <p class="menulinks">
+    <a class="menulink active" href="index.jsp">Home</a><span class="hide"> | </span>
+    <a class="menulink" href="ListFilmServlet">Movie</a><span class="hide"> | </span>
+    <c:if test="${sessionScope.name != null and sessionScope.isAdmin == 1}">
+	    <a class="menulink" href="ListActorServlet">Actor</a><span class="hide"> | </span>
+  	  <a class="menulink" href="ListCategoryServlet">Category</a><span class="hide"> | </span>
+    	<a class="menulink" href="ListCustomerServlet">Customer</a><span class="hide"> | </span>
+    </c:if>
+    <a class="menulink" href="ListCustomerFilmServlet">My Movie</a><span class="hide"> | </span>
+    <a class="menulink" href="LogoutServlet">Logout</a><span class="hide"> | </span>
+    <a> ${sessionScope.name}</a>
+    </p>
+	</div>
+
+	</nav>
